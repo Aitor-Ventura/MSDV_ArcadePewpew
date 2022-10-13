@@ -1,15 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RockExplosion : MonoBehaviour
 {
-    private ParticleSystem _particleSystem;
+    [Header("References")]
+    [Tooltip("Array with the possible prefabs to spawn.")]
     [SerializeField] private GameObject[] _spawnRocks;
-
+    
+    [Header("Variables")]
+    private ParticleSystem _particleSystem;
+    
     private void Start()
     {
         _particleSystem = FindObjectOfType<ParticleSystem>();

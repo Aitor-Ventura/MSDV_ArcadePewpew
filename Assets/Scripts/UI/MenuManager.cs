@@ -1,13 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("References")]
+    [Tooltip("Reference to the pause menu, found under Canvas.")]
     [SerializeField] private GameObject _pauseMenu;
+    [Tooltip("Reference to the death menu, found under Canvas.")]
     [SerializeField] private GameObject _deathMenu;
+    
+    [Header("Variables")]
     private bool togglePause;
     private bool hasDied;
 

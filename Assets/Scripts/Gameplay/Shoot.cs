@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    [Header("References")]
+    [Tooltip("Prefab to use for the bullet.")]
     [SerializeField] private GameObject bullet;
     
     void Update()

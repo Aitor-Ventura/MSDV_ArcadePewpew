@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private int healthPoints;
+    
+    [Header("Variables")]
     private SpriteRenderer _spriteRenderer;
     private PolygonCollider2D _collider;
 

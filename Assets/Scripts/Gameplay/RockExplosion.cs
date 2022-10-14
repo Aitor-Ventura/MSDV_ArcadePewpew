@@ -15,12 +15,14 @@ public class RockExplosion : MonoBehaviour
         _particleSystem = FindObjectOfType<ParticleSystem>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!col.CompareTag("Bullet")) return;
+        if (!other.CompareTag("Bullet")) return;
+        
         _particleSystem.transform.position = transform.position;
         _particleSystem.Play();
-        if (gameObject.CompareTag("BigRock"))
+        
+        if (CompareTag("BigRock"))
         {
             Instantiate(
                 _spawnRocks[Random.Range(0, _spawnRocks.Length)], 

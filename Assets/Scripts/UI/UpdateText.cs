@@ -19,14 +19,14 @@ public class UpdateText : MonoBehaviour
         health = 0;
     }
 
-    void Update()
+    private void Update()
     {
-        if (gameObject.CompareTag("ScoreText"))
+        if (CompareTag("ScoreText"))
         {
             text.SetText("SCORE: " + score);
         }
 
-        if (gameObject.CompareTag("HealthText"))
+        if (CompareTag("HealthText"))
         {
             text.SetText("LIVES: " + health);
         }

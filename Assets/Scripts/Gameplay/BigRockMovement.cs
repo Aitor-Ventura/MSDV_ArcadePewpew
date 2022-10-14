@@ -11,7 +11,6 @@ public class BigRockMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     
     private Rigidbody2D _rigidbody;
-    private float time;
     private GameObject player;
     
     private void Start()
@@ -19,22 +18,19 @@ public class BigRockMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null) return;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
-        transform.up = player.transform.position - transform.position;
-        _rigidbody.AddForce(transform.up * impulseForce, ForceMode2D.Force);
+        InvokeRepeating(nameof(ApplyForce), 0, timeBetweenPush);
     }
     
     private void Update()
     {
         if (player == null) return;
-        time += Time.deltaTime;
         transform.up = player.transform.position - transform.position;
     }
 
-    private void FixedUpdate()
+    private void ApplyForce()
     {
-        if (time >= timeBetweenPush && _rigidbody.velocity.sqrMagnitude <= maxSpeed)
-        {
-            time = 0f;
+        if (_rigidbody.velocity.sqrMagnitude <= maxSpeed)
+        { 
             _rigidbody.AddForce(transform.up * impulseForce);
         }
     }

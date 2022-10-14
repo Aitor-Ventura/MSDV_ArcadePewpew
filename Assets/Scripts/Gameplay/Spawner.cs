@@ -12,17 +12,10 @@ public class Spawner : MonoBehaviour
     [Header("Variables")]
     [Tooltip("Time, in seconds, for the next batch of spawning.")]
     [SerializeField] private float timeBetweenSpawnings;
-    
-    private float time;
 
-    private void Update()
+    private void Start()
     {
-        time += Time.deltaTime;
-        if (time >= timeBetweenSpawnings)
-        {
-            SpawnRock();
-            time = 0f;
-        }
+        InvokeRepeating(nameof(SpawnRock), Random.Range(0, 5), timeBetweenSpawnings);
     }
 
     private void SpawnRock()

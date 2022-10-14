@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Variables")]
     [SerializeField] private int healthPoints;
     
-    [Header("Variables")]
     private SpriteRenderer _spriteRenderer;
     private PolygonCollider2D _collider;
 

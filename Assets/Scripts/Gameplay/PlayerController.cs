@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Variables")]
     [Tooltip("Force used for movement purposes.")]
     [SerializeField] private float force;
     [Tooltip("How fast can the player move.")]
@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("How quick can the player turn.")]
     [SerializeField] private float rotation;
     
-    [Header("Variables")]
     private Rigidbody2D _rigidbody;
     private float turnValue;
 

@@ -9,7 +9,6 @@ public class MenuManager : MonoBehaviour
     [Tooltip("Reference to the death menu, found under Canvas.")]
     [SerializeField] private GameObject _deathMenu;
     
-    [Header("Variables")]
     private bool togglePause;
     private bool hasDied;
 

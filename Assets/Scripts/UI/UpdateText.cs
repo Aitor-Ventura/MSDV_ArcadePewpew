@@ -10,7 +10,6 @@ public class UpdateText : MonoBehaviour
     [Tooltip("TMPro text to edit to show the values of both the score and the health.")]
     [SerializeField] private TextMeshProUGUI text;
     
-    [Header("Variables")]
     public static int score;
     public static int health;
 

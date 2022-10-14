@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class StayWithinBorder : MonoBehaviour
 {
-    [Header("Variables")]
     private Camera _camera;
     private Vector3 viewportPosition;
 

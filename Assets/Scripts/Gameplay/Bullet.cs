@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Variables")]
     [Tooltip("The speed at which the bullet moves.")]
     [SerializeField] private float speed;
 

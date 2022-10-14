@@ -8,10 +8,11 @@ public class Spawner : MonoBehaviour
     [Header("References")]
     [Tooltip("Array of prefabs to use for spawning purposes.")]
     [SerializeField] private GameObject[] _spawnableRocks;
+    
+    [Header("Variables")]
     [Tooltip("Time, in seconds, for the next batch of spawning.")]
     [SerializeField] private float timeBetweenSpawnings;
     
-    [Header("Variables")]
     private float time;
 
     private void Update()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BigRockMovement : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Variables")]
     [Tooltip("The force used for the impulse of the rock. Used for following the player.")]
     [SerializeField] private float impulseForce;
     [Tooltip("The time, in seconds, to wait before the next impulse of the rock.")]
@@ -10,7 +10,6 @@ public class BigRockMovement : MonoBehaviour
     [Tooltip("The maximum speed at which the rock can move.")]
     [SerializeField] private float maxSpeed;
     
-    [Header("Variables")]
     private Rigidbody2D _rigidbody;
     private float time;
     private GameObject player;

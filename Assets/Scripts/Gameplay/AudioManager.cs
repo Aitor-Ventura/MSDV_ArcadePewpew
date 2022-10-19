@@ -5,10 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource EffectsSource;
     public AudioSource MusicSource;
-    
-    public float LowPitchRange = .95f;
-    public float HighPitchRange = 1.05f;
-    
+
     public static AudioManager Instance = null;
     
     private void Awake()

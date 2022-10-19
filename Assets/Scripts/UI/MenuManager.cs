@@ -8,7 +8,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     [Tooltip("Reference to the death menu, found under Canvas.")]
     [SerializeField] private GameObject _deathMenu;
-    
+
     private bool togglePause;
     private bool hasDied;
 
@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     {
         _pauseMenu.SetActive(false);
         _deathMenu.SetActive(false);
+        AudioManager.Instance.MusicSource.Play();
     }
 
     private void Update()
@@ -46,6 +47,7 @@ public class MenuManager : MonoBehaviour
     {
         _pauseMenu.SetActive(true);
         togglePause = true;
+        AudioManager.Instance.MusicSource.Pause();
         Time.timeScale = 0f;
     }
 
@@ -53,6 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         _pauseMenu.SetActive(false);
         togglePause = false;
+        AudioManager.Instance.MusicSource.UnPause();
         Time.timeScale = 1f;
     }
 
@@ -66,6 +69,7 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(id);
+        AudioManager.Instance.MusicSource.Play();
     }
     
     public void ShowDeathScreen()
@@ -74,5 +78,6 @@ public class MenuManager : MonoBehaviour
         togglePause = false;
         
         _deathMenu.SetActive(true);
+        AudioManager.Instance.MusicSource.Stop();
     }
 }

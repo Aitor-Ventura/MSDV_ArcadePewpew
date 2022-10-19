@@ -7,7 +7,9 @@ public class RockExplosion : MonoBehaviour
     [Tooltip("Array with the possible prefabs to spawn.")]
     [SerializeField] private GameObject[] _spawnRocks;
     
-    [Header("Variables")]
+    [Tooltip("Audio clip to play once you destroy the rock.")] 
+    public AudioClip _audioClip;
+
     private ParticleSystem _particleSystem;
     
     private void Start()
@@ -33,6 +35,7 @@ public class RockExplosion : MonoBehaviour
                 Quaternion.identity);
         }
 
+        AudioManager.Instance.PlayOneShot(_audioClip);
         UpdateText.score += 100;
         Destroy(gameObject);
     }
